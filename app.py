@@ -35,7 +35,7 @@ def check_intune():
     if not dominio:
         return jsonify({"usa_intune": "Error: dominio faltante"})
     resultado = usa_intune(dominio)
-    return jsonify({"usa_intune": "Sí" if resultado else "No"})
+    return jsonify({"intune_usage": "true" if resultado else "false"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
