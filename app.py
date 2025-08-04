@@ -31,11 +31,11 @@ def usa_intune(dominio):
             for record in txt_records:
                 for txt in record.strings:
                     texto = txt.decode()
-                    if "MS=" in texto:
-                        intune_dns.append(texto)
-                    else:
-                        otras_dns.append(texto)
-        except:
+                if "MS=" in texto:
+                    otras_dns.append(texto)
+                else:
+                    otras_dns.append(texto)
+                except:
             pass
 
         usa_intune_flag = len(intune_dns) > 0
